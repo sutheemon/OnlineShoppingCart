@@ -14,7 +14,48 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Catalog List</title>
+        
+        <style>
+            #catalogList {
+              font-family: Arial, Helvetica, sans-serif;
+              border-collapse: collapse;
+              width: 50%;
+              box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            }
+            
+            #catalogList td, #catalogList th {
+              border: none;
+              padding: 10px;
+            }
+            
+            #catalogList tr:hover {background-color: #edecff;}
+            
+
+            #catalogList th {
+              padding-top: 12px;
+              padding-bottom: 12px;
+              text-align: left;
+              background-color: #6c79e0;
+              color: white;
+            }
+            
+            .button {
+                background-color: #4e6aeb;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+             }
+             
+             .back {
+                background-color: #3b3b3b;
+             }
+        </style>
     </head>
     <jsp:useBean id="catalog" class="model.Catalog" scope="request"/>
     <%
@@ -24,8 +65,9 @@
      %>
     <body>
         <center>
-            <h1>Catalog List</h1>
-             <table border="1">
+            
+            <h1>DVD Catalog</h1>
+             <table id="catalogList">
                       <tr>
                         <th hidden>ID</th>
                         <th>Name</th>
@@ -38,21 +80,22 @@
                       <%
                            while(itr.hasNext()) {
                                catalog = itr.next();
-                               out.println("<form name=\"addEmployee\" action=\"AddCatalogToCartController\" method=\"POST\">");
+                               out.println("<form name=\"AddCatalog\" action=\"AddCatalogToCartController\" method=\"POST\">");
                                out.println("<tr>");
                                out.println("<td hidden><input type=\"number\" name=\"idCatalog\" value="+catalog.getId()+"></input></td>");
                                out.println("<td> "+ catalog.getName() + "</td>");
                                out.println("<td> "+ catalog.getRate() + "</td>");
                                out.println("<td> "+ catalog.getYearDvd() + "</td>");
                                out.println("<td> "+ catalog.getPrice() + "</td>");
-                               out.println("<td><input type=\"text\" name=\"quantity\" value=\"0\"></input></td>");
-                               out.println("<td><input type=\"submit\" value=\"AddToCart\" name=\"submit\"></input></td>");
+                               out.println("<td><input type=\"text\" name=\"quantity\" value=\"1\"></input></td>");
+                               out.println("<td><input class=\"button\" type=\"submit\" value=\"AddToCart\" name=\"submit\"></input></td>");
                                out.println("<tr>");
                                out.println("</form>");
                            }
                       %>
              </table>
-             <a href="index">Back to Menu</a>
+             <br/>
+             <a href="index" type="button" class="button back">Back to Menu</a>
         </center>
     </body>
 </html>

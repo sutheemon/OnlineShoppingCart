@@ -10,7 +10,28 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Delete DVD</title>
+        <style>
+           
+            .button {
+                background-color: #ff6d6d;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+             }
+             
+             .delete {
+                background-color: #ff6a6a;
+             }
+             .cancel {
+                background-color: #362f4b;
+             }
+        </style>
     </head>
     <body>
         <%
@@ -18,11 +39,10 @@
             
         %>
         <form name="confirmDelete" action="ConfirmDeleteController">
-            ID cart: <%= crt.getIdCart() %> </br>
-            ID catalog <%= crt.getIdCatalog() %> </br>
-            Quantity <%= crt.getQuantity() %> </br>
-            <input type="submit" value="delete" name="delete" />
-            <input type="submit" value="Cancel" name="cancel" />
+            <h1>Delete : DVD Name: <%= crt.getIdCatalog().getName() %></h1>
+            <h1>Quantity: <%= crt.getQuantity() %> </h1>
+            <input type="submit" value="delete" name="delete" class="button delete"/>
+            <input type="submit" value="Cancel" name="cancel" class="button cancel"/>
             
         </form>
     </body>

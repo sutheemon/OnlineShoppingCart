@@ -106,19 +106,4 @@ public class CartTable {
         }
         return cartList;
     }
-    
-//    public static double CalculateOrder(EntityManager em) {
-//        Vector<Cart> cartList = null;
-//        try {
-//            cartList = (Vector<Cart>) em.createNamedQuery("Cart.findAll").getResultList();
-//            //em.close();
-//            
-//        } catch (Exception e) {
-//            //Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", e);
-//            throw new RuntimeException(e);
-//        }
-//        return cartList;
-//    }
-    
-    
 }

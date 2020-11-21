@@ -12,7 +12,26 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Confirm Order</title>
+        
+         <style>
+           
+            .button {
+                background-color: #ff6d6d;
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+             }
+             
+             .success {
+                background-color: #53d85e;
+             }
+        </style>
     </head>
     <body>
         <%
@@ -21,7 +40,7 @@
         %>
         <h1>Your Order is confiemed!</h1>
         <h1>The total amount is $<%= total %></h1>
-        <a href="index">Success</a>
+        <a href="index" class="button success">Success</a>
 
     </body>
 </html>

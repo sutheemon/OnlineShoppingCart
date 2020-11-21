@@ -9,13 +9,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Menu</title>
+        
+        <style>
+            .button {
+                background-color: #ff6a6a; /* Green */
+                border: none;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+             }
+        </style>
     </head>
     <body>
         <h1>
-            <a href="showcatalog.jsp">Show all catalog</a>
+            <a href="showcatalog.jsp" class="button">Show all catalog</a>
             <br/>
-            <a href="showcart.jsp">Show all cart</a>
+            <a href="showcart.jsp" class="button">Show all cart</a>
         </h1>
     </body>
 </html>
