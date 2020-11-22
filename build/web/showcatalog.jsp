@@ -59,8 +59,7 @@
     </head>
     <jsp:useBean id="catalog" class="model.Catalog" scope="request"/>
     <%
-            EntityManager em = (EntityManager) session.getAttribute("entitymanager");
-            Vector<Catalog> catalogList = CatalogTable.findAllCatalog(em);
+            Vector<Catalog> catalogList = CatalogTable.findAllCatalog();
             Iterator<Catalog> itr = catalogList.iterator();
      %>
     <body>

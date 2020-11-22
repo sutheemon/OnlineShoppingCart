@@ -20,7 +20,7 @@ import model.CartTable;
  *
  * @author Rung
  */
-public class ConfirmDeleteController extends HttpServlet {
+public class ConfirmRemoveController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,17 +33,15 @@ public class ConfirmDeleteController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        int rowDeleted = 0;
+        int rowRemove = 0;
         HttpSession session = request.getSession();
         EntityManager em = (EntityManager) session.getAttribute("entitymanager");
-        
         Cart crt = (Cart) session.getAttribute("cart");
-        if (request.getParameter("delete") != null ) {
-            rowDeleted = CartTable.removeCart(em,crt.getIdCart());
-            
+
+        if (request.getParameter("remove") != null ) {
+            rowRemove = CartTable.removeCart(crt.getIdCart());
         }
-        request.setAttribute("rowDeleted", rowDeleted);
+        request.setAttribute("rowRemove", rowRemove);
         request.getRequestDispatcher("showcart.jsp").forward(request, response);
     }
 

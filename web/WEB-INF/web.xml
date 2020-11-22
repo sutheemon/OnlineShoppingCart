@@ -20,6 +20,10 @@
         <servlet-name>ComfirmOrder</servlet-name>
         <servlet-class>controller.ComfirmOrder</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConfirmRemoveController</servlet-name>
+        <servlet-class>controller.ConfirmRemoveController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InitServlet</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ComfirmOrder</servlet-name>
         <url-pattern>/ComfirmOrder</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConfirmRemoveController</servlet-name>
+        <url-pattern>/ConfirmRemoveController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

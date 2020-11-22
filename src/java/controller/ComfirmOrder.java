@@ -34,19 +34,17 @@ public class ComfirmOrder extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+     
         HttpSession session = request.getSession();
         EntityManager em = (EntityManager) session.getAttribute("entitymanager");
-        Vector<Cart> cart = CartTable.findAllCart(em);
-        
-            
+        Vector<Cart> cart = CartTable.findAllCart();
+         
         double sum = 0.0;
             for(int i = 0; i<cart.size(); i++){
-                    sum += cart.get(i).getQuantity()*cart.get(i).getIdCatalog().getPrice();
-                    CartTable.removeCart(em,cart.get(i).getIdCart());
+                sum += cart.get(i).getQuantity()*cart.get(i).getIdCatalog().getPrice();
+                CartTable.removeCart(cart.get(i).getIdCart());
             }
-            request.setAttribute("total", sum);
-        
+        request.setAttribute("total", sum);
         request.getRequestDispatcher("confirmOrder.jsp").forward(request, response);
     }
 

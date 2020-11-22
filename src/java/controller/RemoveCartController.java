@@ -38,9 +38,9 @@ public class RemoveCartController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("idCart"));
         HttpSession session = request.getSession();
         EntityManager em = (EntityManager) session.getAttribute("entitymanager");
-        Cart crt = CartTable.findCartById(em, id);
+        Cart crt = CartTable.findCartById(id);
         session.setAttribute("cart", crt);
-        request.getRequestDispatcher("confirmDelete.jsp").forward(request, response);
+        request.getRequestDispatcher("confirmRemove.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Delete DVD</title>
+        <title>Remove DVD</title>
         <style>
            
             .button {
@@ -25,7 +25,7 @@
                 cursor: pointer;
              }
              
-             .delete {
+             .remove {
                 background-color: #ff6a6a;
              }
              .cancel {
@@ -38,10 +38,10 @@
             Cart crt = (Cart) session.getAttribute("cart");
             
         %>
-        <form name="confirmDelete" action="ConfirmDeleteController">
-            <h1>Delete : DVD Name: <%= crt.getIdCatalog().getName() %></h1>
+        <form name="confirmRemove" action="ConfirmRemoveController">
+            <h1>Remove : DVD Name: <%= crt.getIdCatalog().getName() %></h1>
             <h1>Quantity: <%= crt.getQuantity() %> </h1>
-            <input type="submit" value="delete" name="delete" class="button delete"/>
+            <input type="submit" value="remove" name="remove" class="button remove"/>
             <input type="submit" value="Cancel" name="cancel" class="button cancel"/>
             
         </form>

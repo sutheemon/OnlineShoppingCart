@@ -40,29 +40,24 @@ public class AddCatalogToCartController extends HttpServlet {
         HttpSession session = request.getSession();
         EntityManager em = (EntityManager) session.getAttribute("entitymanager");
         Cart crt = new Cart();
-        Catalog cata = new Catalog();
-        Catalog ctlog = CatalogTable.findCatalogById(em,Integer.parseInt(request.getParameter("idCatalog")));
-        
-        List<Cart> old = CartTable.findCartByIdCatalog(em,ctlog);
+        Catalog ctlog = CatalogTable.findCatalogById(Integer.parseInt(request.getParameter("idCatalog")));
+        List<Cart> old = CartTable.findCartByIdCatalog(ctlog);
         
         if(old == null){
             crt.setIdCatalog(ctlog);
             crt.setQuantity(Integer.parseInt(request.getParameter("quantity")));
-            int rowInserted = CartTable.insertCart(em,crt);
+            int rowInserted = CartTable.insertCart(crt);
             request.setAttribute("rowInserted", rowInserted);
-            request.getRequestDispatcher("showcart.jsp").forward(request, response);
         }
         else {
             crt.setIdCart(old.get(0).getIdCart());
             crt.setIdCatalog(ctlog);
             crt.setQuantity(old.get(0).getQuantity()+Integer.parseInt(request.getParameter("quantity")));
-            int rowUpdated = CartTable.updateCart(em,crt);
+            int rowUpdated = CartTable.updateCart(crt);
             request.setAttribute("rowUpdated", rowUpdated);
-            request.getRequestDispatcher("showcart.jsp").forward(request, response);
-            
         }
+        request.getRequestDispatcher("showcart.jsp").forward(request, response);
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

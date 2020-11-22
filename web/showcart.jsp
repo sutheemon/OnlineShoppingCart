@@ -19,9 +19,8 @@
         <style>
             .row {
               display: flex;
-              flex-wrap: wrap;
-              margin-right: -15px;
-              margin-left: -15px;
+              flex-direction: row;
+              margin: 10px;
               justify-content: center;
             }
             #CartList {
@@ -65,13 +64,15 @@
              .checkOut {
                 background-color: #53d85e;
              }
+             .catalog {
+                background-color: #77a2ff;
+             }
         </style>
         
     </head>
     <jsp:useBean id="cart" class="model.Cart" scope="request"/>
     <%
-            EntityManager em = (EntityManager) session.getAttribute("entitymanager");
-            Vector<Cart> cartList = CartTable.findAllCart(em);
+            Vector<Cart> cartList = CartTable.findAllCart();
             Iterator<Cart> itr = cartList.iterator();
      %>
     <body>
@@ -107,6 +108,7 @@
              <br/>
              <div class="row">
              <a href="index" class="button back">Back to Menu</a>
+             <a href="showcatalog.jsp" class="button catalog">Back to Catalog</a>
              <form name="ComfirmOrder" action="ComfirmOrder">
                 <input type="submit" value="CheckOut" class="button checkOut" name="submit" />
              </form>

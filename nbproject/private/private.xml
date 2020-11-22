@@ -4,10 +4,15 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/model/Cart.java</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/controller/InitServlet.java</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/web/confirmDelete.jsp</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/model/CatalogTable.java</file>
             <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/controller/AddCatalogToCartController.java</file>
             <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/model/CartTable.java</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/controller/ComfirmOrder.java</file>
             <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/model/Catalog.java</file>
-            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/web/showcart.jsp</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/controller/ConfirmDeleteController.java</file>
+            <file>file:/C:/Users/Rung/Desktop/ปี4เทอม1/COMPONENT-BASED%20SOFTWARE%20DEVELOPMENT%20(CBSD)/work/OnlineShoppingCart/src/java/controller/RemoveCartController.java</file>
         </group>
     </open-files>
 </project-private>

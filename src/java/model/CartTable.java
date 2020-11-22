@@ -8,6 +8,8 @@ package model;
 import java.util.List;
 import java.util.Vector;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.Query;
 /**
  *
@@ -15,7 +17,10 @@ import javax.persistence.Query;
  */
 public class CartTable {
     
-    public static int insertCart(EntityManager em, Cart crt) {
+    public static int insertCart(Cart crt) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         try {
             em.getTransaction().begin();
             em.persist(crt);
@@ -28,7 +33,10 @@ public class CartTable {
         return 1;
     }
     
-    public static Vector<Cart> findAllCart(EntityManager em) {
+    public static Vector<Cart> findAllCart() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         Vector<Cart> cartList = null;
         try {
             cartList = (Vector<Cart>) em.createNamedQuery("Cart.findAll").getResultList();
@@ -41,7 +49,10 @@ public class CartTable {
         return cartList;
     }
     
-    public static int removeCart(EntityManager em, int id) {
+    public static int removeCart(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         try {
             em.getTransaction().begin();
             Cart target = em.find(Cart.class, id);
@@ -58,7 +69,10 @@ public class CartTable {
         return 1;
     }
     
-    public static Cart findCartById(EntityManager em, int id) {
+    public static Cart findCartById(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         Cart crt = null;
         try {
             crt = em.find(Cart.class, id);
@@ -71,7 +85,10 @@ public class CartTable {
         return crt;
     }
     
-    public static int updateCart(EntityManager em, Cart crt) {
+    public static int updateCart(Cart crt) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         try {
             em.getTransaction().begin();
             Cart target = em.find(Cart.class, crt.getIdCart());
@@ -90,7 +107,10 @@ public class CartTable {
         
     }
     
-    public static List<Cart> findCartByIdCatalog(EntityManager em, Catalog idCatalog) {
+    public static List<Cart> findCartByIdCatalog(Catalog idCatalog) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         List<Cart> cartList = null;
         try {
             cartList =  (List<Cart>) em.createNamedQuery("Cart.findByIdCatalog").setParameter("idCatalog", idCatalog).getResultList();

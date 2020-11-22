@@ -7,13 +7,18 @@ package model;
 
 import java.util.Vector;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  *
  * @author Rung
  */
 public class CatalogTable {
-    public static Vector<Catalog> findAllCatalog(EntityManager em) {
+    public static Vector<Catalog> findAllCatalog() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         Vector<Catalog> catalogList = null;
         try {
             catalogList = (Vector<Catalog>) em.createNamedQuery("Catalog.findAll").getResultList();
@@ -25,7 +30,11 @@ public class CatalogTable {
         }
         return catalogList;
     }
-    public static Catalog findCatalogById(EntityManager em, int id) {
+    
+    public static Catalog findCatalogById(int id) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("OnlineShoppingCartPU");
+        EntityManager em = emf.createEntityManager();
+        
         Catalog cata = null;
         try {
             cata = em.find(Catalog.class, id);
