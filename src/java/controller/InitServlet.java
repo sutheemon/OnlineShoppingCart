@@ -37,9 +37,9 @@ public class InitServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        EntityManager em = emf.createEntityManager();
-        HttpSession session = request.getSession();
-        session.setAttribute("entitymanager", em);
+//        EntityManager em = emf.createEntityManager();
+//        HttpSession session = request.getSession();
+//        session.setAttribute("entitymanager", em);
         request.getRequestDispatcher("menu.jsp").forward(request, response);
     }
 

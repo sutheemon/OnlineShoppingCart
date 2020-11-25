@@ -37,10 +37,12 @@ public class AddCatalogToCartController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        EntityManager em = (EntityManager) session.getAttribute("entitymanager");
+        
+//        HttpSession session = request.getSession();
+//        EntityManager em = (EntityManager) session.getAttribute("entitymanager");
         Cart crt = new Cart();
         Catalog ctlog = CatalogTable.findCatalogById(Integer.parseInt(request.getParameter("idCatalog")));
+        
         List<Cart> old = CartTable.findCartByIdCatalog(ctlog);
         
         if(old == null){

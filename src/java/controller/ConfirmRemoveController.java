@@ -35,7 +35,6 @@ public class ConfirmRemoveController extends HttpServlet {
             throws ServletException, IOException {
         int rowRemove = 0;
         HttpSession session = request.getSession();
-        EntityManager em = (EntityManager) session.getAttribute("entitymanager");
         Cart crt = (Cart) session.getAttribute("cart");
 
         if (request.getParameter("remove") != null ) {
