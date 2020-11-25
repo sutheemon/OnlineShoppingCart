@@ -35,8 +35,6 @@ public class ComfirmOrder extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
      
-//        HttpSession session = request.getSession();
-//        EntityManager em = (EntityManager) session.getAttribute("entitymanager");
         Vector<Cart> cart = CartTable.findAllCart();
          
         double sum = 0.0;
